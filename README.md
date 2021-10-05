@@ -1,6 +1,6 @@
 # Todoly
 - A simple todo web app (PWA)
-
+- **Try it now: [Todoly](https://t4p4n.github.io/todoly/)**
 ## Features
 - Localstorage
   - Todos will stay on page even if you reload it
@@ -14,6 +14,6 @@
 ## Screenshots
  ![](scrsht.png)
   
-## Demo
+## Video Demo
  [click me to watch the video](https://m.youtube.com/watch?v=GIoeLtJO4Mk)
 
