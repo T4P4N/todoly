@@ -1,45 +1,52 @@
 :root {
     --bgc: rgb(19, 19, 19);
     --pri: #FFDB6A;
-    --pri2:rgb(29, 24, 11);
+    --pri2:rgb(39, 32, 14);
     --sec: #56a8df;
+    --ff-primary: 'Ubuntu', sans-serif;
     
 }
 
 *, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    /* color: #fff; */
-    font-family: Roboto, Sans-Serif;
-    /* font-size: 15pt; */
-    
+    box-sizing: border-box;   
 }
+
 
 body {
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 1.3125rem;
+    line-height: 1.6;
     background-color: var(--bgc);
-    color: var(--sec);
-    /* color: #FFDB6A; */
 }
 
+body, h1, h2, h3, p {
+    margin: 0;
+}
+
+
 .container {
+    margin-inline: auto;
+    width: min(90%, 70.5rem);
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 li {
     margin-top: 1.5em;
     list-style:none;
-    text-align:left;
+    text-align:center;
     font-size: 14pt;
     color: var(--pri);
 }
 
 #btn-x {
-    margin-left: 5em;
+    margin-left: 5%;
     color: red;
-    padding: 0.5em 0.8em;
+    padding: 0.5em 0.6em;
     text-decoration: none;
     border-radius: 10px;
     background-color: var(--pri2);
@@ -50,15 +57,16 @@ li {
 #btn-c {
     /* margin-left: 1em; */
     /* margin-top: -5px; */
+    margin-left: 5px;
     color: green;
-    padding: 0.5em 0.8em;
+    padding: 0.5em 0.6em;
     border-radius: 10px;
     background-color: var(--pri2);
     cursor: pointer;
 }
 
 .add-form {
-    font-size: 18pt;
+    /* font-size: 18pt; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,21 +80,23 @@ h1 {
 
 #msg-input {
     margin-bottom: 1em;
-    margin-top: 1em;
+    margin-top: .1em;
     border-radius: 10px;
     color: var(--pri);
     background-color: #111b2b;
-    border: none;
+    border: 2px solid #ffdc6a65;
     height: 20px;
-    padding: 1em;
+    padding: 1em 0.5em;
     font-size: 15pt;
+    width: min(90%, 20rem);
 }
 
 #btn-sbt {
-    padding: 0.8em;
+    padding: .8em;
     font-size: 14pt;
+    line-height: 1.5;
     letter-spacing: 1px;
-    border-radius: 30px;
+    border-radius: 25px;
     border: none;
     background-color: var(--pri);
     cursor: pointer;
@@ -98,11 +108,18 @@ h1 {
     background-position: center;
     transition: background 0.8s;
   }
+
+
 .ripple:hover {
     background: #ffffff radial-gradient(circle, transparent 1%, #fde596 1%) center/15000%;
 }
+
+
 .ripple:active {
     background-color: #6a99ff;
     background-size: 100%;
     transition: background 0s;
 }
+
+
+

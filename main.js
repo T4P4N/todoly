@@ -41,14 +41,20 @@ function addTodo(e) {
     e.preventDefault();
     // console.log('Clicked');
     message = msg.value;
-    let is_done = false;
-    id++;
-    console.log(id);
-    let td = new Todo(id, message, is_done);
-    toDos.push(td);
-    // Store obj in toDos array & set todos array as value in lc strg.
-    localStorage.setItem('my-todos', JSON.stringify(toDos))
-    limaker(message, is_done); 
+    if (message.length >= 1) {
+        // console.log('it worked')
+        let is_done = false;
+        id++;
+        // console.log(id);
+        let td = new Todo(id, message, is_done);
+        toDos.push(td);
+        // Store obj in toDos array & set todos array as value in lc strg.
+        localStorage.setItem('my-todos', JSON.stringify(toDos))
+        limaker(message, is_done); 
+    } else {
+        // console.log("please enter 3 or more letters.!")
+    }
+    
 }
 
 function limaker(message, is_done){
@@ -60,7 +66,7 @@ function limaker(message, is_done){
         strk.appendChild(document.createTextNode(message))
         li.appendChild(strk)
         var btn = document.createElement('span')
-        btn.textContent = 'X';
+        btn.textContent = '❌';
         btn.setAttribute('id', 'btn-x');
         li.appendChild(btn);
         todoContainer.appendChild(li);
@@ -71,10 +77,10 @@ function limaker(message, is_done){
     else {
         li.appendChild(document.createTextNode(message));
         var btn = document.createElement('span');
-        btn.textContent = 'X';
+        btn.textContent = '❌';
         btn.setAttribute('id', 'btn-x');
         var btnchk = document.createElement('span');
-        btnchk.textContent = '✔';
+        btnchk.textContent = '✔️';
         btnchk.setAttribute('id', 'btn-c');
         li.appendChild(btn);
         li.appendChild(btnchk);
@@ -92,7 +98,7 @@ function removeTodo(e) {
     if(e.target.id == 'btn-x'){
         var li = e.target.parentElement;
         li.className = "todo-item animate__animated animate__fadeOutDown"
-        setTimeout(() => {todoContainer.removeChild(li);console.log("done!")}, 600);
+        setTimeout(() => {todoContainer.removeChild(li)}, 600);
 
     }
     //Remove Obj from array using the splice method!
@@ -120,7 +126,7 @@ function markDone(e) {
         li.appendChild(strk)
         
         var btn = document.createElement('span')
-        btn.textContent = 'X';
+        btn.textContent = '❌';
         btn.setAttribute('id', 'btn-x');
         li.appendChild(btn);
         // mark is_done = true
